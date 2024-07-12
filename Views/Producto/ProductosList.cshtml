@@ -1,0 +1,48 @@
+@model List<ProductoModel>
+
+@{
+    ViewData["Title"] = "Listado de Productos";
+    int numero=0;
+}
+<h1>@ViewData["Title"]</h1>
+
+<a class = "btn btn-primary" asp-action="ProductosAdd" asp-controller="Producto">Agregar Producto</a>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+
+
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+        {
+            numero++;
+        }
+ 
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@p.Name</td>
+                <td>@p.Precio</td>
+                <td>@p.Stock</td>
+
+
+                <td>
+                    <a class="btn btn-outline-info" asp-action="ProductosEdit" asp-controller="Producto" asp-route-id="@p.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="ProductosDeleted" asp-controller="Producto" asp-route-id="@p.Id">Borrar</a>
+                </td>
+
+            </tr>  
+        }    
+    </tbody>
+    
+</table>
+

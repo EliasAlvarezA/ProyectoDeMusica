@@ -1,0 +1,27 @@
+@model ProductoModel
+
+<h1>Alta de Productos</h1>
+
+<form class="form" asp-controler="Producto" asp-action="ProductosAdd">
+
+    <div class="mb-3">
+        <label asp-for="Name"  class="form-label">Nombre</label>
+        <input type="text" class="form-control" asp-for="Name"  placeholder="Escribe el Nombre del Producto">
+       
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Precio"  class="form-label">Precio</label>
+        <input type="text" class="form-control" asp-for="Precio"  placeholder="Escribe el Precio del Producto">
+       
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock"  class="form-label">Pz en Stock</label>
+        <input type="text" class="form-control" asp-for="Stock"  placeholder="Escribe la cantidad del Piezas disponibles">
+       
+    </div>
+
+    <button class ="btn btn-outline-primary">Guardar</button>
+    <button class="btn btn-outline-Secundary" asp-controller="Producto" asp-action="ProductosList">Regresar</button>
+</form>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Valhalla_Music.props" />
+</Project>
